@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lite CAIS</title>
+  <link rel="stylesheet" href="products.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">CAIS</div>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <nav id="navbar">
+      <ul>
+        <li><a href="index.html" data-i18n="home">Home</a></li>
+        <li><a href="about.html" data-i18n="about">About Us</a></li>
+        <li><a href="products.html" data-i18n="products">Products</a></li>
+        <li><a href="news.html" data-i18n="news">News</a></li>
+        <li><a href="contact.html" data-i18n="contact">Contact Us</a></li>
+      </ul>
+    </nav>
+    <div class="lang-toggle">
+      <button onclick="setLang('en')">EN</button>
+      <button onclick="setLang('zh')">中文</button>
+    </div>
+  </header>
+
+<script>
+  const productIds = ['product1', 'product2', 'product3', 'product4', 'product5'];
+
+  function showProductSection() {
+    const hash = window.location.hash || '#product1';
+    const targetId = hash.replace('#', '');
+    const index = productIds.indexOf(targetId);
+    const allSections = document.querySelectorAll('.product-detail');
+
+    allSections.forEach(sec => {
+      sec.style.display = (sec.id === targetId) ? 'block' : 'none';
+    });
+
+    // Handle previous/next links
+    const currentSection = document.getElementById(targetId);
+    if (currentSection) {
+      const prevBtn = currentSection.querySelector('.prev-btn');
+      const nextBtn = currentSection.querySelector('.next-btn');
+
+      if (index > 0) {
+        prevBtn.href = `#${productIds[index - 1]}`;
+        prevBtn.classList.remove('disabled');
+      } else {
+        prevBtn.href = '#';
+        prevBtn.classList.add('disabled');
+      }
+
+      if (index < productIds.length - 1) {
+        nextBtn.href = `#${productIds[index + 1]}`;
+        nextBtn.classList.remove('disabled');
+      } else {
+        nextBtn.href = `#${productIds[index]}`;
+        nextBtn.classList.add('disabled');
+      }
+    }
+  }
+
+  window.addEventListener('DOMContentLoaded', showProductSection);
+  window.addEventListener('hashchange', showProductSection);
+</script>
+
+<section id="product1" class="product-detail">
+    <img src="images/product/product1-banner.jpg" alt="Performance Materials" class="product-header-image" />
+    <h2 data-en="Performance Materials" data-zh="高性能材料">Performance Materials</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Product-specific introduction goes here.</p>
+
+    <div class="overview-cards">
+      <div class="overview-card">
+        <img src="images/product/overview2.jpg" alt="Overview 2" />
+        <p>Feature Title</p>
+      </div>
+      <div class="overview-card">
+        <img src="images/product/overview3.jpg" alt="Overview 3" />
+        <p>Feature Title</p>
+      </div>
+      <div class="overview-card">
+        <img src="images/product/overview4.jpg" alt="Overview 4" />
+        <p>Feature Title</p>
+      </div>
+        <div class="overview-card">
+        <img src="images/product/overview5.jpg" alt="Overview 5" />
+        <p>Feature Title</p>
+      </div>
+    <!-- Add more cards as needed -->
+    </div>
+
+    <div class="nav-buttons">
+      <a href="#" class="prev-btn">← Previous</a>
+      <a href="#" class="next-btn">Next →</a>
+    </div>
+    <a href="index.html" class="back-button">← Back to Homepage</a>
+  </section>
+
+  <section id="product2" class="product-detail">
+    <img src="images/product/product2-banner.jpg" alt="Care Chemicals" class="product-header-image" />
+    <h2 data-en="Care Chemicals" data-zh="巴啦啦小魔仙">Care Chemicals</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Product-specific introduction goes here.</p>
+
+    <div class="overview-cards">
+      <div class="overview-card">
+        <img src="images/product/overview1.jpg" alt="Overview 1" />
+        <p>Feature Title</p>
+      </div>
+      <div class="overview-card">
+        <img src="images/product/overview3.jpg" alt="Overview 3" />
+        <p>Feature Title</p>
+      </div>
+      <div class="overview-card">
+        <img src="images/product/overview4.jpg" alt="Overview 4" />
+        <p>Feature Title</p>
+      </div>
+        <div class="overview-card">
+        <img src="images/product/overview5.jpg" alt="Overview 5" />
+        <p>Feature Title</p>
+      </div>
+    <!-- Add more cards as needed -->
+    </div>
+
+    <div class="nav-buttons">
+      <a href="#" class="prev-btn">← Previous</a>
+      <a href="#" class="next-btn">Next →</a>
+    </div>
+    <a href="index.html" class="back-button">← Back to Homepage</a>
+  </section> 
+
+  <section id="product3" class="product-detail">
+    <img src="images/product/product3-banner.jpg" alt="Agriculture Solutions" class="product-header-image" />
+    <h2 data-en="Agriculture Solutions" data-zh="巴啦啦小魔仙">Agriculture Solutions</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Product-specific introduction goes here.</p>
+
+    <div class="overview-cards">
+      <div class="overview-card">
+        <img src="images/product/overview1.jpg" alt="Overview 1" />
+        <p>Feature Title</p>
+      </div>
+      <div class="overview-card">
+        <img src="images/product/overview2.jpg" alt="Overview 2" />
+        <p>Feature Title</p>
+      </div>
+      <div class="overview-card">
+        <img src="images/product/overview4.jpg" alt="Overview 4" />
+        <p>Feature Title</p>
+      </div>
+        <div class="overview-card">
+        <img src="images/product/overview5.jpg" alt="Overview 5" />
+        <p>Feature Title</p>
+      </div>
+    <!-- Add more cards as needed -->
+    </div>
+
+    <div class="nav-buttons">
+      <a href="#" class="prev-btn">← Previous</a>
+      <a href="#" class="next-btn">Next →</a>
+    </div>
+    <a href="index.html" class="back-button">← Back to Homepage</a>
+  </section> 
+
+  <section id="product4" class="product-detail">
+    <img src="images/product/product4-banner.jpg" alt="Agriculture Solutions" class="product-header-image" />
+    <h2 data-en="Surface Technologies" data-zh="巴啦啦小魔仙">Surface Technologies</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Product-specific introduction goes here.</p>
+
+    <div class="overview-cards">
+      <div class="overview-card">
+        <img src="images/product/overview1.jpg" alt="Overview 1" />
+        <p>Feature Title</p>
+      </div>
+      <div class="overview-card">
+        <img src="images/product/overview2.jpg" alt="Overview 3" />
+        <p>Feature Title</p>
+      </div>
+      <div class="overview-card">
+        <img src="images/product/overview3.jpg" alt="Overview 3" />
+        <p>Feature Title</p>
+      </div>
+        <div class="overview-card">
+        <img src="images/product/overview5.jpg" alt="Overview 5" />
+        <p>Feature Title</p>
+      </div>
+    <!-- Add more cards as needed -->
+    </div>
+
+    <div class="nav-buttons">
+      <a href="#" class="prev-btn">← Previous</a>
+      <a href="#" class="next-btn">Next →</a>
+    </div>
+    <a href="index.html" class="back-button">← Back to Homepage</a>
+  </section> 
+
+  <section id="product5" class="product-detail">
+    <img src="images/product/product5-banner.jpg" alt="Industrial Solutions" class="product-header-image" />
+    <h2 data-en="Industrial Solutions" data-zh="巴啦啦小魔仙">Industrial Solutions</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Product-specific introduction goes here.</p>
+
+    <div class="overview-cards">
+      <div class="overview-card">
+        <img src="images/product/overview1.jpg" alt="Overview 1" />
+        <p>Feature Title</p>
+      </div>
+      <div class="overview-card">
+        <img src="images/product/overview2.jpg" alt="Overview 3" />
+        <p>Feature Title</p>
+      </div>
+      <div class="overview-card">
+        <img src="images/product/overview3.jpg" alt="Overview 3" />
+        <p>Feature Title</p>
+      </div>
+        <div class="overview-card">
+        <img src="images/product/overview4.jpg" alt="Overview 4" />
+        <p>Feature Title</p>
+      </div>
+    <!-- Add more cards as needed -->
+    </div>
+
+    <div class="nav-buttons">
+      <a href="#" class="prev-btn">← Previous</a>
+      <a href="#" class="next-btn">Next →</a>
+    </div>
+    <a href="index.html" class="back-button">← Back to Homepage</a>
+  </section> 
+
+    <footer>
+      <p data-i18n="footer">© 2025 CAIS. All rights reserved.</p>
+    </footer>
+</body>
+</html>  

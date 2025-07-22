@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lite CAIS</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+  <div class="logo-container">
+    <span class="logo-text">CAIS</span>
+    <img src="images/logo.png" alt="Company Logo" class="logo-img" />
+  </div>
+
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <nav id="navbar">
+      <ul>
+        <li><a href="index.html" data-i18n="home">Home</a></li>
+        <li><a href="about.html" data-i18n="about">About Us</a></li>
+        <li><a href="products.html" data-i18n="products">Products</a></li>
+        <li><a href="news.html" data-i18n="news">News</a></li>
+        <li><a href="contact.html" data-i18n="contact">Contact Us</a></li>
+      </ul>
+    </nav>
+    <div class="lang-toggle">
+      <button onclick="setLang('en')">EN</button>
+      <button onclick="setLang('zh')">中文</button>
+    </div>
+  </header>
+
+  <section class="hero-carousel" id="heroCarousel">
+    <a href="news.html" class="hero-slide active">
+      <img src="images/index_img/hero-banner1.jpg" alt="Slide 1"/>
+      <div class="hero-caption">Welcome to Our World</div>
+    </a>
+    <a href="./news/news1.html" class="hero-slide">
+      <img src="images/index_img/hero-banner2.jpg" alt="Slide 2"/>
+      <div class="hero-caption">Sustainable Solutions</div>
+    </a>
+    <a href="./news/news2.html" class="hero-slide">
+      <img src="images/index_img/hero-banner3.jpg" alt="Slide 3"/>
+      <div class="hero-caption">Innovating Chemistry</div>
+    </a>
+    <div class="carousel-controls">
+      <button class="prev" onclick="prevSlide()">&#10094;</button>
+      <button class="next" onclick="nextSlide()">&#10095;</button>
+    </div>
+    <div class="carousel-dots" id="carouselDots"></div>
+  </section>
+
+<section class="product-grid">
+  <h2 data-en="Products" data-zh="产品">Our Business</h2>
+</section>
+
+<section class="carousel-container">
+  <a href="products.html#product1" class="product-item">
+    <img src="images/product_img/overview1.jpg" alt="Performance Materials" />
+    <div class="product-caption">
+    <div class="product-name">Performance Materials</div>
+    <div class="product-desc">Advanced materials for durability and efficiency.</div>
+    </div>
+  </a>
+  <a href="products.html#product2" class="product-item">
+    <img src="images/product_img/overview2.jpg" alt="Care Chemicals" />
+    <div class="product-caption">
+    <div class="product-name">Performance Materials</div>
+    <div class="product-desc">Advanced materials for durability and efficiency.</div>
+    </div>
+  </a>
+  <a href="products.html#product3" class="product-item">
+    <img src="images/product_img/overview3.jpg" alt="Agriculture Solutions" />
+    <div class="product-caption">
+    <div class="product-name">Performance Materials</div>
+    <div class="product-desc">Advanced materials for durability and efficiency.</div>
+    </div>
+  </a>
+  <a href="products.html#product4" class="product-item">
+    <img src="images/product_img/overview4.jpg" alt="Surface Technologies" />
+    <div class="product-caption">
+    <div class="product-name">Performance Materials</div>
+    <div class="product-desc">Advanced materials for durability and efficiency.</div>
+    </div>
+  </a>
+  <a href="products.html#product5" class="product-item">
+    <img src="images/product_img/overview5.jpg" alt="Industrial Solutions" />
+    <div class="product-caption">
+    <div class="product-name">Performance Materials</div>
+    <div class="product-desc">Advanced materials for durability and efficiency.</div>
+    </div>
+  </a>
+</section>
+
+
+<section class="news-grid">
+  <h2 data-en="Latest News" data-zh="最新资讯">Latest News</h2>
+  <div id="news-container" class="news-container"></div>
+</section>
+
+<script>
+  fetch('data/news.json')
+  .then(res => res.json())
+  .then(newsList => {
+    const lang = document.documentElement.lang || 'en';
+    const container = document.getElementById('news-container');
+    const limit = 6;
+
+    newsList.slice(0, limit).forEach(news => {
+      // Wrap the whole card in a link
+      const link = document.createElement('a');
+      link.href = `${news.page}`;// URL to your detail page
+      link.className = 'news-card';       // style it the same
+      link.style.textDecoration = 'none'; // optional
+
+      const img = document.createElement('img');
+      img.src = news.image;
+      img.alt = news.title_en;
+
+      const p = document.createElement('p');
+      p.setAttribute('data-en', news.title_en);
+      p.setAttribute('data-zh', news.title_zh);
+      p.textContent = news[`title_${lang}`];
+
+      link.appendChild(img);
+      link.appendChild(p);
+      container.appendChild(link);
+    });
+  });
+</script>
+
+    <section class=".bg-innovation, .bg-technology">
+      <div class="bg-innovation">
+        <img src="/images/index_img/bg-innovations.png" alt="Innovation"/>
+        <div class="text">
+          <h3>Partnership & Client Trust</h3>
+          <p>CAIS has all-round business cooperation with CP Group (China), New Cooperative Group of China CO-OP Group, New Hope Group, Beijing Capital Agribusiness & Foods Group, Beijing Grain Group, Higreen Agricultural Wholesale Market, Yangcheng Stock, Beidahuang Group and other large enterprises, Belt and Road International Cooperation Development Working Committee(ICDF), Brazil Rizen, Netherlands Foundation, European and American Foundation, etc, Give full play to the advantages of enterprises in international and domestic trade resources and investment, and work together with partners.</p>
+        </div>
+      </div>
+      <div class="bg-technology">
+        <img src="/images/index_img/bg-technology.jpg" alt="Technology"/>
+        <div class="text">
+          <h3>Research & Technology</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas accumsan, orci a imperdiet porttitor, elit nulla sagittis nisi, nec tincidunt arcu quam nec erat.</p>
+        </div>
+      </div>
+    </section>
+
+  <footer>
+    <p data-i18n="footer">© 2025 CAIS. All rights reserved.</p>
+    <img src="images/logo.png" alt="Company Logo" class="footer-logo" />
+  </footer>
+
+
+  <script src="lang.js"></script>
+  <script>
+    const carousel = document.getElementById("heroCarousel");
+    const slides = carousel.querySelectorAll(".hero-slide");
+    const dotsContainer = document.getElementById("carouselDots");
+    let currentSlide = 0;
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle("active", i === index);
+      });
+      if (dotsContainer) {
+        dotsContainer.innerHTML = "";
+        slides.forEach((_, i) => {
+          const dot = document.createElement("span");
+          dot.className = "dot" + (i === index ? " active" : "");
+          dot.onclick = () => {
+            currentSlide = i;
+            showSlide(currentSlide);
+          };
+          dotsContainer.appendChild(dot);
+        });
+      }
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    }
+
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      showSlide(currentSlide);
+    }
+
+    showSlide(currentSlide);
+    setInterval(nextSlide, 5000);
+  </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+[
+  {
+    "id": "news1",
+    "image": "images/news_img/news1_thumb.jpg",
+    "title_en": "New innovation leads sustainability drive in Europe",
+    "image-thumb": "images/news_img/news1_thumb.jpg",
+    "page": "news/news1.html"
+  },
+  {
+    "id": "news2",
+    "image": "images/news_img/news2_thumb.jpeg",
+    "title_en": "Advanced materials launched in Asia-Pacific",
+    "title_zh": "亚太地区推出先进材料",
+    "image-thumb": "images/news_img/news2_thumb.jpeg",
+    "page": "news/news2.html"
+  },
+  {
+    "id": "news3",
+    "image": "images/news_img/news3_thumb.jpg",
+    "title_en": "Advanced materials launched in Asia-Pacific",
+    "title_zh": "亚太地区推出先进材料",
+    "image-thumb": "images/news_img/news3_thumb.jpg",
+    "page": "news/news3.html"
+  },
+  {
+    "id": "news4",
+    "image": "images/news_img/news4_thumb.png",
+    "title_en": "Advanced materials launched in Asia-Pacific",
+    "title_zh": "亚太地区推出先进材料",
+    "image-thumb": "images/news_img/news4_thumb.png",
+    "page": "news/news4.html"
+  },
+  {
+    "id": "news5",
+    "image": "images/news_img/news5_thumb.png",
+    "title_en": "Advanced materials launched in Asia-Pacific",
+    "title_zh": "亚太地区推出先进材料",
+    "image-thumb": "images/news_img/news5_thumb.png",
+    "page": "news/news5.html"
+  },
+  {
+    "id": "news6",
+    "image": "images/news_img/news6_thumb.png",
+    "title_en": "Advanced materials launched in Asia-Pacific",
+    "title_zh": "亚太地区推出先进材料",
+    "image-thumb": "images/news_img/news4_thumb.png",
+    "page": "news/news6.html"
+  }
+
+]

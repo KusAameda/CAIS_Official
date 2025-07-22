@@ -1,0 +1,139 @@
+.product-detail {
+  padding: 2rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.product-header-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.overview-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.overview-card {
+  width: 200px; /* or 250px based on layout */
+  height: 200px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #f9f9f9;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.overview-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* This is the key to cropping/fitting */
+  display: block;
+}
+
+.overview-card p {
+  margin: 0;
+  padding: 0.5rem;
+  font-weight: bold;
+  background-color: #ffffffcc;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  font-size: 0.95rem;
+}
+
+
+.back-button {
+  display: inline-block;
+  margin-top: 1.5rem;
+  color: #437057;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  background: #2F5249;
+  color: white;
+  padding: 1rem 2rem;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  padding-left: 0;
+  margin: 0;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+}
+
+.lang-toggle button {
+  background: none;
+  border: 1px solid white;
+  color: white;
+  padding: 0.4rem 0.8rem;
+  margin-left: 0.5rem;
+  cursor: pointer;
+}
+footer {
+  background: #2F5249;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+.hamburger {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: white;
+  margin-left: auto;
+}
+
+.nav-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.nav-buttons a {
+  padding: 0.5rem 1rem;
+  background-color: #437057;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-buttons a:hover {
+  background-color: white;
+  color: #437057;
+  border: 1px solid #437057;
+}
+
+.nav-buttons a.disabled {
+  background-color: #ccc;
+  color: #666;
+  pointer-events: none;
+}

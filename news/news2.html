@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>News - CAIS</title>
+  <link rel="stylesheet" href="../news.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">CAIS</div>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <nav id="navbar">
+      <ul>
+        <li><a href="../index.html" data-i18n="home">Home</a></li>
+        <li><a href="../about.html" data-i18n="about">About Us</a></li>
+        <li><a href="../about.html" data-i18n="products">Products</a></li>
+        <li><a href="../news.html" data-i18n="news">News</a></li>
+        <li><a href="../contact.html" data-i18n="contact">Contact Us</a></li>
+      </ul>
+    </nav>
+    <div class="lang-toggle">
+      <button onclick="setLang('en')">EN</button>
+      <button onclick="setLang('zh')">中文</button>
+    </div>
+  </header>
+
+  <main class="news-layout">
+    <!-- Left: Main News Article -->
+    <article class="news-main">
+      <img src="../images/news_img/news2-banner" alt="News Banner" class="news-banner" />
+      <h1 data-en="Headline Title" data-zh="新闻标题">Headline Title</h1>
+      <p class="news-date">2025-06-20</p>
+      <div class="news-body">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur id elit at justo...</p>
+        <!-- More paragraphs -->
+      </div>
+    </article>
+
+    <!-- Right: Sidebar News List -->
+    <aside class="news-sidebar">
+      <h3>Latest News</h3>
+      <div class="news-sidebar-list" id="newsSidebarList">
+        <!-- Dynamically loaded via JS -->
+      </div>
+    </aside>
+  </main>
+
+      <a href="../index.html" class="back-button">← Back to Homepage</a>
+  </section> 
+
+    <footer>
+      <p data-i18n="footer">© 2025 CAIS. All rights reserved.</p>
+    </footer>
+
+  <script src="../lang.js"></script>
+    <script>
+    // Load sidebar news
+    fetch('../data/news.json')
+        .then(res => res.json())
+        .then(newsList => {
+        const lang = document.documentElement.lang || 'en';
+        const sidebar = document.getElementById('newsSidebarList');
+
+        newsList.slice(0, 5).forEach(news => {
+            const card = document.createElement('a');
+            card.href = `../${news.page}`;  // ← fix: go up a level then use the correct path
+            card.className = 'sidebar-news-card';
+            card.innerHTML = `
+            <img src="../${news.image}" alt="${news.title_en}">
+            <p>${news[`title_${lang}`]}</p>
+            `;
+            sidebar.appendChild(card);
+        });
+        });
+    </script>
+
+</body>
+</html>
