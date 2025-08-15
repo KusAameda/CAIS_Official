@@ -319,6 +319,7 @@ header {
   height: 100%;
   object-fit: cover;
   display: block;
+  position: center;
 }
 
 /* Caption mask */
@@ -342,6 +343,7 @@ header {
   font-size: clamp(1.5rem, 2vw, 2rem);
   font-weight: bold;
   margin-bottom: 0.5rem;
+  padding-right: 1rem;
 }
 
 .product-desc {
@@ -350,6 +352,7 @@ header {
   color: #f0f0f0;
   opacity: 1;
   transition: opacity 0.3s ease;
+  padding-right: 1.5rem;
 }
 
 /* Hover effect */

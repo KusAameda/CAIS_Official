@@ -2,31 +2,32 @@
   {
     "id": "news1",
     "image": "images/news_img/news1_thumb.jpg",
-    "title_en": "New innovation leads sustainability drive in Europe",
+    "title_en": "CAIS new efforts in agricultural elevation in Hebei Province, China",
+    "title_zh": "中农国际在中国河北打造农业新生态",
     "image-thumb": "images/news_img/news1_thumb.jpg",
     "page": "news/news1.html"
   },
   {
     "id": "news2",
     "image": "images/news_img/news2_thumb.jpeg",
-    "title_en": "Advanced materials launched in Asia-Pacific",
-    "title_zh": "亚太地区推出先进材料",
+    "title_en": "CAIS is Partning with SBS Holdings, Inc.,Japan, in Pet Food Industry",
+    "title_zh": "中农国际拟携手SBS株式会社打造宠物食品产业链",
     "image-thumb": "images/news_img/news2_thumb.jpeg",
     "page": "news/news2.html"
   },
   {
     "id": "news3",
     "image": "images/news_img/news3_thumb.jpg",
-    "title_en": "Advanced materials launched in Asia-Pacific",
-    "title_zh": "亚太地区推出先进材料",
+    "title_en": "Photovoltaic Solar Agriculture Brings New Future to Rural Revitalization ",
+    "title_zh": "光畜一体化助力乡村振兴新模式",
     "image-thumb": "images/news_img/news3_thumb.jpg",
     "page": "news/news3.html"
   },
   {
     "id": "news4",
     "image": "images/news_img/news4_thumb.png",
-    "title_en": "Advanced materials launched in Asia-Pacific",
-    "title_zh": "亚太地区推出先进材料",
+    "title_en": "Photovoltaic Solar Agriculture Brings New Future to Rural Revitalization ",
+    "title_zh": "光畜一体化助力乡村振兴新模式",
     "image-thumb": "images/news_img/news4_thumb.png",
     "page": "news/news4.html"
   },
